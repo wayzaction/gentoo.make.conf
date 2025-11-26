@@ -1,0 +1,31 @@
+### Gentoo: glibc + nomultilib + bleeding edge
+
+COMMON_FLAGS="-march=native -O2 -pipe -fomit-frame-pointer"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+
+RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
+MAKEOPTS="-j12 -l12" ### 12 Threads !!!
+USE="wayland X pipewire vaapi vulkan dbus bluetooth drm alsa elogind udev pulseaudio openrc dracut grub -debug -test -wifi -gnome -cinnamon -kde -dvd -seatd -cdr -cups -abi_86_32 -nls -systemd -man"
+
+### License auto acceptance ###
+ACCEPT_LICENSE="-* @FREE @BINARY-REDISTRIBUTABLE"
+
+### Bleeding Edge, Baby ###
+ACCEPT_KEYWORDS="~amd64"
+
+### GPU Drivers: AMD Open Source + Zink ###
+VIDEO_CARDS="amdgpu radeonsi zink"
+
+LC_MESSAGES=C.utf8
+
+### Mirror: Sweden ###
+GENTOO_MIRRORS="https://ftp.lysator.liu.se/gentoo/ \
+    http://ftp.lysator.liu.se/gentoo/ \
+    ftp://ftp.lysator.liu.se/gentoo/ \
+    rsync://ftp.lysator.liu.se/gentoo/ \
+    https://mirrors.tnonline.net/gentoo/gentoo-distfiles/ \
+    rsync://mirrors.tnonline.net/gentoo-distfiles"
+GRUB_PLATFORMS="efi-64"
