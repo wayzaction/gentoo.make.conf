@@ -1,2 +1,2 @@
-# gentoo.make.conf
-My day-to-day gentoo make.confs for various purposes
+# Gentoo
+My day-to-day stuff for Gentoo
